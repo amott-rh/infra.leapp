@@ -15,9 +15,9 @@
     - unsigned_packages_post.rc != 0
     - unsigned_packages_post.stderr != ""
 
-- name: handle-old-packages | Set a fact that lists the old packages and packages not versioned by rhel release
+- name: handle-old-packages | Set a fact that lists the old packages and packages not versioned by rhel release, excluding packages in non_removable_packages
   ansible.builtin.set_fact:
-    unsigned_packages_post: "{{ unsigned_packages_post.stdout_lines }}"
+    unsigned_packages_post: "{{ unsigned_packages_post.stdout_lines | reject('match', '^(' + (non_removable_packages | map('regex_escape') | join('|')) + ')(-.*)?$') | list }}"
     cacheable: true
 
 - name: handle-old-packages | Diff the list of current un-versioned packages and the previous list of un-versioned packages and set fact for missing packages
@@ -39,7 +39,11 @@
     owner: root
     group: root
 
-- name: handle-old-packages | Display results of search for old packages and packages not versioned by rhel release
+- name: handle-old-packages | Display list of packages which are specifically listed as not be removed
+  ansible.builtin.debug:
+    msg: "{{ non_removable_packages }}"
+
+- name: handle-old-packages | Display results of search for old packages and packages not versioned by rhel release, excluding packages in non_removable_packages
   ansible.builtin.debug:
     msg: "{{ unsigned_packages_post }}"
 

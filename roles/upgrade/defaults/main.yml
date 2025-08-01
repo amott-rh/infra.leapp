@@ -160,4 +160,6 @@ infra_leapp_upgrade_system_roles_collection: fedora.linux_system_roles
 
 remove_old_rhel_packages: true
 
+non_removable_packages:
+  - amazon-ssm-agent
 ...
