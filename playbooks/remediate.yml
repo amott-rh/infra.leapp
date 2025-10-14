@@ -12,4 +12,3 @@
     - name: Perform remediations on the system
       ansible.builtin.import_role:
         name: infra.leapp.remediate
-...

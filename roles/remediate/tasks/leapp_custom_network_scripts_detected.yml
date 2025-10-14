@@ -89,7 +89,5 @@
   rescue:
     - name: leapp_custom_network_scripts_detected | Continue when no custom scripts are found
       ansible.builtin.debug:
-        msg: "No custom network scripts detected. Skipping this task."
+        msg: No custom network scripts detected. Skipping this task.
       when: leapp_custom_scripts_missing is defined and leapp_custom_scripts_missing is true
-
-...

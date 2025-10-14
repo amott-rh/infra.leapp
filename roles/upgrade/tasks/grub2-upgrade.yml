@@ -63,5 +63,3 @@
     reboot_timeout: "{{ reboot_timeout }}"
     post_reboot_delay: "{{ post_reboot_delay }}"
   timeout: "{{ reboot_timeout }}"
-
-...

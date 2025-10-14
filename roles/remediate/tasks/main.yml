@@ -4,7 +4,7 @@
 - name: Check if the system is RHEL 7 or 8
   ansible.builtin.assert:
     that: ansible_distribution == 'RedHat' and ( ansible_distribution_major_version|int == 8 or ansible_distribution_major_version|int == 7 )
-    msg: "This role is only applicable to RHEL 7 or 8"
+    msg: This role is only applicable to RHEL 7 or 8
   tags: remediate
 
 - name: Remediate the system
@@ -13,4 +13,3 @@
   loop_control:
     loop_var: remediation_item
   when: remediation_item in remediation_todo
-...

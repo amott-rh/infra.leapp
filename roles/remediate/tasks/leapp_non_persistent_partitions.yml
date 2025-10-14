@@ -46,7 +46,5 @@
   rescue:
     - name: leapp_non_persistent_partitions | Continue when /var/lib/leapp is missing
       ansible.builtin.debug:
-        msg: "/var/lib/leapp mount point not found. Skipping this task."
+        msg: /var/lib/leapp mount point not found. Skipping this task.
       when: leapp_mount_missing is defined and leapp_mount_missing is true
-
-...

@@ -51,5 +51,3 @@
       The preupgrade analysis report generation is now complete.
       {{ 'WARNING: Inhibitors' if upgrade_inhibited else 'SUCCESS: No inhibitors' }} found.
       Review the tasks above or the result file at {{ result_filename }}.
-
-...

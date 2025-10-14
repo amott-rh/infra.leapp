@@ -50,8 +50,7 @@
   check_mode: true
   register: search_packages_result
 
-- name: handle-old-packages | Display results of the search for packages from the previous os release, packages not versioned by rhel release and all dependent
-    packages
+- name: handle-old-packages | Display results of the search for packages from the previous os release, packages not versioned by rhel release and all dependent packages
   ansible.builtin.debug:
     msg: "{{ search_packages_result.changes.removed | default(search_packages_result.results) | default([]) | regex_replace('Removed: ', '') }}"
 
@@ -62,5 +61,3 @@
   when:
     - remove_old_rhel_packages
     - ansible_distribution_major_version | int >= 7
-
-...

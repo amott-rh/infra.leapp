@@ -15,4 +15,3 @@
     - name: Perform OS upgrade
       ansible.builtin.import_role:
         name: infra.leapp.upgrade
-...

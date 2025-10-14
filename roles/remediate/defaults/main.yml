@@ -31,4 +31,3 @@ remediation_playbooks:
   - leapp_unavailable_kde
   - leapp_vdo_check_needed
 remediation_todo: []
-...

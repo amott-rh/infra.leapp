@@ -8,5 +8,3 @@
         regexp: ^AllowZoneDrifting=.*
         line: AllowZoneDrifting=no
         backup: true
-
-...

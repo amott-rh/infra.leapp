@@ -101,5 +101,3 @@
     reboot_timeout: "{{ upgrade_timeout }}"
     post_reboot_delay: "{{ post_reboot_delay }}"
   timeout: "{{ upgrade_timeout }}"
-
-...

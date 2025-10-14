@@ -6,13 +6,13 @@
   block:
     - name: leapp_unavailable_kde | Check if the KDE desktop environment is installed
       ansible.builtin.command: # noqa: command-instead-of-module
-        cmd: "rpm -qa kde-workspace"
+        cmd: rpm -qa kde-workspace
       register: kde_install
       changed_when: false
 
     - name: leapp_unavailable_kde | Check if the Gnome desktop environment is installed
       ansible.builtin.command: # noqa: command-instead-of-module
-        cmd: "rpm -qa gnome-desktop3"
+        cmd: rpm -qa gnome-desktop3
       register: gnome_install
       changed_when: false
 
@@ -24,5 +24,3 @@
         - "@^graphical-server-environment"
         - gnome-desktop3
       when: kde_install.stdout | length > 0 and gnome_install.stdout | length == 0
-
-...

@@ -31,4 +31,3 @@
     quiet: true
   changed_when: true
   notify: RIPU in-place OS upgrade is done
-...

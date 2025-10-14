@@ -61,4 +61,3 @@ preupg_return_codes:
     msg: preupg command not found.  Analysis must be run first.
     fail: true
     inhibited: true
-...
