@@ -34,9 +34,7 @@ analysis_repos_el7:
   - rhel-7-server-extras-rpms
 
 analysis_repos_el8: []
-
 analysis_repos_el9: []
-
 # If defined, leapp_answerfile will be used as the contents of /var/log/leapp/answerfile.
 # leapp_answerfile: |
 #   [remove_pam_pkcs11_module_check]
@@ -65,7 +63,6 @@ leapp_high_sev_as_inhibitors: false
 # List of keys of known inhibitors which will be excluded when setting upgrade_inhibited and leapp_inhibitors
 # This allows ignoring inhibitors for which remediations are available and require no further attention
 leapp_known_inhibitors: []
-
 # Dict of env vars to be used when the leapp command is run
 leapp_env_vars: {}
 # leapp_env_vars:
@@ -160,4 +157,3 @@ os_path: $PATH
 
 async_timeout_maximum: 7200
 async_poll_interval: 60
-...

@@ -36,7 +36,5 @@
   rescue:
     - name: leapp_newest_kernel_not_in_use | Continue when the latest version is the default
       ansible.builtin.debug:
-        msg: "The newest kernel is already in use. Skipping this task."
+        msg: The newest kernel is already in use. Skipping this task.
       when: leapp_newest_kernel_in_use is defined and leapp_newest_kernel_in_use is true
-
-...

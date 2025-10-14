@@ -6,5 +6,3 @@
         path: /etc/fstab
         regexp: (.*)cifs(.*)
         replace: "# \\1cifs\\2"
-
-...

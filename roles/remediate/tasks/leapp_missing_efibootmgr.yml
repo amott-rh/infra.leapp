@@ -5,5 +5,3 @@
       ansible.builtin.package:
         name: efibootmgr
         state: present
-
-...

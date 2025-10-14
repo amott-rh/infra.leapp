@@ -3,14 +3,12 @@
   block:
     - name: leapp_remote_using_root | Configure sshd to prohibit-passwords on root login
       ansible.builtin.lineinfile:
-        path: "/etc/ssh/sshd_config"
-        regex: "^(#)?{{ item.key }}"
+        path: /etc/ssh/sshd_config
+        regex: ^(#)?{{ item.key }}
         line: "{{ item.key }} {{ item.value }}"
         state: present
       loop:
-        - {key: "PermitRootLogin", value: "prohibit-password"}
-        - {key: "PasswordAuthentication", value: "no"}
+        - { key: PermitRootLogin, value: prohibit-password }
+        - { key: PasswordAuthentication, value: "no" }
       notify:
         - Restart sshd
-
-...

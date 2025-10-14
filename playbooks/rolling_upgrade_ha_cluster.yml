@@ -13,20 +13,21 @@
 - name: Upgrade the CIB
   hosts: all
   become: true
-  tasks: &upgrade_cib_block
-    - name: Block to upgrade the CIB
-      run_once: true
-      block:
-        - name: Upgrade the CIB
-          ansible.builtin.command:
-            cmd: pcs cluster cib-upgrade
-          register: __pcs_cluster_cib_upgrade
-          changed_when: __pcs_cluster_cib_upgrade.stdout == "Cluster CIB has been upgraded to latest version"
+  tasks:
+    - &id001
+             name: Block to upgrade the CIB
+             run_once: true
+             block:
+               - name: Upgrade the CIB
+                 ansible.builtin.command:
+                   cmd: pcs cluster cib-upgrade
+                 register: __pcs_cluster_cib_upgrade
+                 changed_when: __pcs_cluster_cib_upgrade.stdout == "Cluster CIB has been upgraded to latest version"
 
-        - name: Show pcs cluster cib-upgrade register
-          ansible.builtin.debug:
-            var: __pcs_cluster_cib_upgrade
-            verbosity: 1
+               - name: Show pcs cluster cib-upgrade register
+                 ansible.builtin.debug:
+                   var: __pcs_cluster_cib_upgrade
+                   verbosity: 1
 
 - name: Rolling upgrade of Red Hat High Availability Cluster
   hosts: all
@@ -98,7 +99,7 @@
   hosts: all
   become: true
   tasks:
-    - <<: *upgrade_cib_block
+    - <<: *id001
 
     # TODO: Verify resources per document cited above.
 
@@ -114,5 +115,3 @@
         var: __pcs_cluster_enable_all
         verbosity: 1
       run_once: true
-
-...

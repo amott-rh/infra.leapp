@@ -35,5 +35,3 @@
     - name: leapp_multiple_kernels | Print the list of installed kernels
       ansible.builtin.debug:
         var: installed_kernels.stdout_lines
-
-...

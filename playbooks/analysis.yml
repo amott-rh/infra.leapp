@@ -22,4 +22,3 @@
     - name: Generate preupgrade analysis report
       ansible.builtin.import_role:
         name: infra.leapp.analysis
-...

@@ -22,4 +22,3 @@
   ansible.builtin.assert:
     that: leapp_upgrade_success
     msg: Leapp upgrade FirstBoot failed.
-...

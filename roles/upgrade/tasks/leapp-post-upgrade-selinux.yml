@@ -28,4 +28,3 @@
   check_mode: true
   register: selinux_check_results
   failed_when: selinux_check_results.changed
-...

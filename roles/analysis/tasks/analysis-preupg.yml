@@ -126,4 +126,3 @@
 - name: analysis-preupg | Capture inhibitors in a list leapp_inhibitors
   ansible.builtin.set_fact:
     leapp_inhibitors: "{{ results_inhibitors.stdout_lines + results_errors.stdout_lines }}"
-...

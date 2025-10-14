@@ -13,5 +13,3 @@
     post_reboot_delay: "{{ post_reboot_delay }}"
   timeout: "{{ reboot_timeout }}"
   when: updates_available.changed # noqa: no-handler
-
-...

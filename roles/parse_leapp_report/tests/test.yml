@@ -4,4 +4,3 @@
   remote_user: root
   roles:
     - parse_leapp_report
-...

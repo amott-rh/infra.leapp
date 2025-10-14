@@ -94,7 +94,7 @@
     dest: /etc/yum/vars/releasever
     owner: root
     group: root
-    mode: '0644'
+    mode: "0644"
   when:
     - leapp_upgrade_type == 'rhui'
     - post_upgrade_release | length > 0
@@ -178,4 +178,3 @@
 - name: leapp-post-upgrade | Include tasks for leapp post upgrade crypto policies
   ansible.builtin.include_tasks: leapp-post-upgrade-crypto.yml
   when: set_crypto_policies | bool
-...

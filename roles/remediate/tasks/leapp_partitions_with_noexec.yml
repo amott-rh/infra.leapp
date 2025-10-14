@@ -26,5 +26,3 @@
       register: sed_result
       changed_when: sed_result.rc == 0
       when: mountpoints.stdout_lines | length > 0
-
-...

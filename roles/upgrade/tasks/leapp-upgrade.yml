@@ -67,8 +67,7 @@
 
 - name: leapp-upgrade | Include disable-previous-repo-files.yml
   ansible.builtin.include_tasks: disable-previous-repo-files.yml
-  loop:
-    "{{ repo_files_to_remove_at_upgrade }}"
+  loop: "{{ repo_files_to_remove_at_upgrade }}"
   when: leapp_upgrade_type == "custom"
 
 - name: leapp-upgrade | Include rmmod-kernel-modules.yml
@@ -151,5 +150,3 @@
         reboot_timeout: "{{ reboot_timeout }}"
         post_reboot_delay: "{{ post_reboot_delay }}"
       timeout: "{{ reboot_timeout }}"
-
-...
